@@ -1,0 +1,28 @@
+:root{--bg:#faf6ef;--ink:#2a2118;--muted:#6f6253;--card:#fffdf8;--line:#e6dccb;--accent:#b4532a;--accent2:#1f6f5c;--soft:#f3e8d6;--warn:#8a1c1c}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1713;--ink:#f1e9dc;--muted:#b9ab97;--card:#241f19;--line:#3a3127;--accent:#e08a5c;--accent2:#5fb39b;--soft:#2e2720;--warn:#ff9b9b}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans","Segoe UI",system-ui,sans-serif;line-height:1.65;font-size:17px}
+body::before{content:"";position:fixed;inset:0 0 auto 0;height:8px;background:repeating-linear-gradient(90deg,var(--accent) 0 18px,var(--accent2) 18px 36px,#d9a441 36px 54px);z-index:10}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 64px}
+a{color:var(--accent)}h1,h2,h3{line-height:1.3}h1{font-size:1.8rem;margin:.3em 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:#fff;text-decoration:none;font-weight:600;cursor:pointer;font-size:1rem}
+.btn.ghost{background:transparent;color:var(--accent)}.btn:disabled{opacity:.5}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.choice{display:block;text-align:start;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:1rem;width:100%}
+.choice[aria-pressed=true]{border-color:var(--accent);background:var(--soft)}
+.muted{color:var(--muted);font-size:.92rem}.notice{background:var(--soft);border-radius:10px;padding:10px 14px;font-size:.92rem}
+.draft{background:var(--warn);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700;margin:10px 0}
+.quran{border-inline-start:4px solid var(--accent2);background:var(--soft);padding:12px 14px;border-radius:8px;margin:12px 0}
+.quran .ar{font-family:"Amiri","Noto Naskh Arabic",serif;font-size:1.35rem;direction:rtl;text-align:right;line-height:2}
+.quran .cite{font-size:.8rem;color:var(--muted)}
+.shahada{text-align:center;padding:16px;border:2px dashed var(--accent);border-radius:12px;margin:14px 0}
+.shahada .ar{font-family:"Amiri","Noto Naskh Arabic",serif;font-size:1.4rem;direction:rtl}
+.ar-par{direction:rtl;text-align:right;font-family:"Noto Naskh Arabic",serif;color:var(--muted);border-inline-start:2px solid var(--line);padding-inline-start:10px;margin:4px 0 14px}
+.stations{list-style:none;padding:0;margin:0;counter-reset:s}
+.stations>li{position:relative;padding:0 0 18px 0;padding-inline-start:46px}
+.stations>li::before{counter-increment:s;content:counter(s);position:absolute;inset-inline-start:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent2);color:#fff;display:grid;place-items:center;font-weight:700}
+.stations>li::after{content:"";position:absolute;inset-inline-start:15px;top:34px;bottom:2px;width:2px;background:var(--line)}
+.stations>li:last-child::after{display:none}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;font-size:.95rem;margin-bottom:8px}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;margin-top:18px}
